@@ -16,12 +16,11 @@ namespace JJORY.Scene.Dummy
             }
         }
 
-        class GameManage : Sequence
+        class SystemManage : Sequence
         {
             public IEnumerator Execute()
             {
-                GameManager.Instance.Init();
-                Utils.CreateLogMessage<DummySceneController>("2. GameManager 모듈 로드 성공");
+                Utils.CreateLogMessage<DummySceneController>("2. SystemManager 모듈 로드 성공");
                 yield return null;
             }
         }
@@ -69,13 +68,13 @@ namespace JJORY.Scene.Dummy
         private void Start()
         {
             AddressableLoad addressableLoad = new AddressableLoad();
-            GameManage gameManage = new GameManage();
+            SystemManage systemManage = new SystemManage();
             SceneModuleLoad sceneModuleLoad = new SceneModuleLoad();
             MoveScene moveScene = new MoveScene();
             EventControl eventControl = new EventControl();
 
             SequenceActionUtils.Instance.Enqueue(addressableLoad);
-            SequenceActionUtils.Instance.Enqueue(gameManage);
+            SequenceActionUtils.Instance.Enqueue(systemManage);
             SequenceActionUtils.Instance.Enqueue(sceneModuleLoad);
             SequenceActionUtils.Instance.Enqueue(moveScene);
             SequenceActionUtils.Instance.Enqueue(eventControl);
