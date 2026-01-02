@@ -25,3 +25,9 @@ public enum InteractionType
     CameraMove,
     DragDrop
 }
+
+public enum LayerType
+{
+    Government = 10,
+    Warehouse = 11
+}
