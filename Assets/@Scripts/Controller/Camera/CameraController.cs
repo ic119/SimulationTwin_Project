@@ -68,7 +68,7 @@ namespace JJORY.Controller
         public Quaternion origin_Rotate;
 
         [Header("Interacte Object Variable")]
-        [SerializeField] private DetectController detecteController;
+        [SerializeField] private DetectController detectController;
 
         [Header("View 전환 관련 변수")]
         public Tween camaraView_TW;
@@ -119,7 +119,7 @@ namespace JJORY.Controller
 
         private void LateUpdate()
         {
-            if (detecteController != null && detecteController.isMoveToTarget)
+            if (detectController != null && detectController.isMoveToTarget)
             {
                 return;
             }
@@ -161,7 +161,7 @@ namespace JJORY.Controller
             }
 
             // 오브젝트 감지 시도
-            if (detecteController.IsDetectObject() == true && InteractionState.cur_InteractionType != InteractionType.CameraMove)
+            if (detectController.IsDetectObject() == true && InteractionState.cur_InteractionType != InteractionType.CameraMove)
             {
                 return;
             }
@@ -176,7 +176,7 @@ namespace JJORY.Controller
         /// </summary>
         public void ResetCamera(bool _isInit)
         {
-            detecteController.isMoveToTarget = true;
+            detectController.isMoveToTarget = true;
 
             if (cameraReset_Seq != null && cameraReset_Seq.IsActive())
             {
@@ -194,11 +194,11 @@ namespace JJORY.Controller
                                .Join(cameraRotate_TW)
                                .OnComplete(() =>
                                {
-                                   detecteController.isMoveToTarget = false;
+                                   detectController.isMoveToTarget = false;
                                })
                                .OnKill(() =>
                                {
-                                   detecteController.isMoveToTarget = false;
+                                   detectController.isMoveToTarget = false;
                                });
             }
             else
@@ -210,11 +210,11 @@ namespace JJORY.Controller
                                .Join(cameraRotate_TW)
                                .OnComplete(() =>
                                {
-                                   detecteController.isMoveToTarget = false;
+                                   detectController.isMoveToTarget = false;
                                })
                                .OnKill(() =>
                                {
-                                   detecteController.isMoveToTarget = false;
+                                   detectController.isMoveToTarget = false;
                                });
             }
         }

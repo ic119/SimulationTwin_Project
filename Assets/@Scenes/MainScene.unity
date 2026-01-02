@@ -3699,7 +3699,7 @@ Transform:
   m_GameObject: {fileID: 1635089816373961851}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 132.56, y: 1.3, z: 44.1}
+  m_LocalPosition: {x: 132.56, y: 1.3, z: 56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6373,8 +6373,9 @@ GameObject:
   - component: {fileID: 8944336655558343643}
   - component: {fileID: 8944336655558343644}
   - component: {fileID: 8944336655558343645}
-  - component: {fileID: 9078993844920338371}
   - component: {fileID: 1464226678001714434}
+  - component: {fileID: 8944336655558343648}
+  - component: {fileID: 8944336655558343647}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -6382,6 +6383,65 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8944336655558343647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944336655558343646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e5273058760c94b81a05b5284d9947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicked_ParentObject: {fileID: 0}
+  clicked_ChildObject: {fileID: 0}
+  camera: {fileID: 8944336655558343644}
+  isMoveToTarget: 0
+  object_Layer:
+    serializedVersion: 2
+    m_Bits: 0
+  childObject_Layer:
+    serializedVersion: 2
+    m_Bits: 0
+  forword_OffSet: {x: 16, y: 10, z: -4}
+  back_OffSet: {x: 0, y: 3.6, z: 4}
+  isSelected: 0
+--- !u!114 &8944336655558343648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944336655558343646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f266af52f41f0104180bbe11117814f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveOption:
+    moveSpeed: 0.1
+  rotationOption:
+    rotateSpeed: 1
+    minAngle: -40
+    maxAngle: 70
+  cur_Rotation: {x: 0, y: 0, z: 0}
+  zoomOption:
+    minStep: 10
+    maxStep: 15
+    minDistance: 10
+    maxDistance: 200
+    zoomSpeed: 30
+    zoomTweenTime: 0.25
+  zoomPivot: {fileID: 0}
+  init_Pos: {x: 0, y: 0, z: 0}
+  init_Rot: {x: 0, y: 0, z: 0, w: 0}
+  camera: {fileID: 0}
+  viewType: 0
+  origin_Position: {x: 0, y: 0, z: 0}
+  origin_Rotate: {x: 0, y: 0, z: 0, w: 0}
+  detectController: {fileID: 8944336655558343647}
 --- !u!33 &8971978236058133078
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6398,38 +6458,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4640631290247343272}
   m_Mesh: {fileID: 8745509275412142989, guid: 72eee9e764f07ab41b6300ba1782362a, type: 3}
---- !u!114 &9078993844920338371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8944336655558343646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowDebugText: 0
-  ShowCameraFrustum: 1
-  IgnoreTimeScale: 0
-  WorldUpOverride: {fileID: 0}
-  ChannelMask: -1
-  UpdateMethod: 2
-  BlendUpdateMethod: 1
-  LensModeOverride:
-    Enabled: 0
-    DefaultMode: 2
-  DefaultBlend:
-    Style: 1
-    Time: 2
-    CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
 --- !u!4 &9196323489097317733
 Transform:
   m_ObjectHideFlags: 0
