@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using JJORY.View.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,6 +35,7 @@ namespace JJORY.Controller.UI
                 for (int i = 0; i < tabContentsContainer.transform.childCount; i++)
                 {
                     tabContentsList.Add(tabContentsContainer.transform.GetChild(i).gameObject);
+                    tabContentsList[i].SetActive(false);
                 }
             }
 
@@ -41,14 +43,22 @@ namespace JJORY.Controller.UI
             {
                 for (int i = 0; i < tabButtonsContainer.transform.childCount; i++)
                 {
-                    tabContentsList.Add(tabButtonsContainer.transform.GetChild(i).gameObject);
+                    tabButtonsList.Add(tabButtonsContainer.transform.GetChild(i).gameObject);
+                    tabButtonsList[i].SetActive(false);
                 }
             }
         }
 
         private void ShowTabContent(int _index)
         {
-
+            if (_index == 0 )
+            {
+                tabContentsList[0].SetActive(true);
+                if (tabButtonsList[0].GetComponent<TabButtonView>())
+                {
+                    tabButtonsList[0].GetComponent<TabButtonView>().OnClickedButton(true);
+                }
+            }
         }
 
         private void OnClickedTabButton()
